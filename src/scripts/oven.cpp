@@ -33,8 +33,8 @@ void oven()
     while (std::getline(BakeFile, line))
     {
         if (
-                !(line.empty()) && 
-                !(line.find("!") == 0)
+            !(line.empty()) && 
+            !(line.find("!") == 0)
         )
         {
             if (
