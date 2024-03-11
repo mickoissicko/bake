@@ -1,0 +1,8 @@
+
+>cook{
+    : g++ src/main.cpp src/bake.cpp :
+}
+
+>serve{
+    : echo "yeah bitch, no more make" :
+}
