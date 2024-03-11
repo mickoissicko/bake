@@ -23,11 +23,17 @@ void oven()
     std::string line;
     
     bool ShouldExecute = false;
+    bool ShouldIgnore  = false;
 
     while (std::getline(BakeFile, line))
     {
         if (!line.empty())
         {
+            if (line.find("//"))
+            {
+                ShouldIgnore = true;
+            }
+
             if (
                 (line.find(">cook") != str::npos   || 
                  line.find(">bake") != str::npos   ||  // ._. rawr
@@ -53,6 +59,11 @@ void oven()
                     std::string command = line.substr(start + 1, end - start - 1);
                     Cook(command);
                 }
+            }
+        
+            if (ShouldIgnore)
+            {
+                continue;
             }
         }
     }
