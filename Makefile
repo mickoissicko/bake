@@ -4,10 +4,11 @@ CXX = g++
 BIN_DIR = bin
 TARGET = $(BIN_DIR)/chef
 
-SRCS = src/main.c \
-       src/scripts/bake.cpp \
-	   src/scripts/oven.cpp \
-	   src/scripts/verify.cpp
+SRCS = src/main.c             \
+       src/scripts/bake.cpp   \
+	   src/scripts/oven.cpp   \
+	   src/scripts/verify.cpp \
+	   src/throw_val.cpp	  \
 
 $(TARGET): $(SRCS)
 	$(CXX) $^ -o $@
