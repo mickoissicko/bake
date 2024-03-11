@@ -1,7 +1,7 @@
 
 >cook{
     : cd src/                                              :
-    : g++ -o chef main.c scripts/bake.cpp scripts/oven.cpp :
+    : g++ -o chef2 main.c scripts/bake.cpp scripts/oven.cpp :
 }
 
 >serve{
