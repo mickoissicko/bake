@@ -32,7 +32,7 @@ void Oven()
 
     while (std::getline(BakeFile, Line))
     {
-        if (!(Line.empty()) && !(Line.find("!--") == 0))
+        if (!(Line.empty()) && !(Line.find("!") == 0))
         {
             if (
                 (Line.find(CookKey)     != std::string::npos  || 
