@@ -2,6 +2,7 @@
 
 int main()
 {
+    VerifyFile();
     Oven();
 
     return 0;
