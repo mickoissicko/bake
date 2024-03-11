@@ -1,6 +1,15 @@
+cc: 'gcc';
 
+name: '-o out';
 
+var: [
+    test/main.c
+    test/helo.c
+];
+
+!main{
+    >[cc] [name] [var];
+}
 
 !serve{
-    >echo "Closing...";
 }
