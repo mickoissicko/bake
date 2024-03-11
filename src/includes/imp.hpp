@@ -9,6 +9,7 @@
 namespace defs {
     typedef std::ifstream isf;
     typedef std::ofstream osf;
+    typedef std::string str;
 }
 
 void Cook(const std::string & command);
