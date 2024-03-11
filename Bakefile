@@ -1,6 +1,6 @@
 
 >cook{
-    : cd src/                                              :
+    : cd src/                                               :
     : g++ -o chef2 main.c scripts/bake.cpp scripts/oven.cpp :
 }
 
