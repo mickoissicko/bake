@@ -1,7 +1,0 @@
-//
-// serve func can be blank, as in {} no args
-// >serve{}
-//
-// every statement starts and ends with a colon
-// : some command or statement :
-//
