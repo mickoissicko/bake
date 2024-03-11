@@ -1,21 +1,19 @@
 #include "../includes/imp.hpp"
 
-#include <cstddef>
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <cstdlib>
-#include <cstdbool>
 
-// so i dont have to use 'defs::str::npos' because what's the point then?
+// so I don't have to use 'defs::str::npos' because what's the point then?
 using namespace defs;
-
-bool ShouldExecute = false;
-
-std::string Line;
 
 void Oven()
 {
+    bool ShouldExecute = false;
+ 
+    std::string Line;
+    
     defs::isf BakeFile("Bakefile");
 
     if (!BakeFile.is_open())
