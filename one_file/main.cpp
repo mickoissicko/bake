@@ -30,7 +30,7 @@ void Oven()
         {
             if (
                 (Line.find("!cook{") != std::string::npos   ||
-                 Line.find("!main{") != std::string::npos   ||
+                 Line.find("!main{") != std::string::npos   || // very sussy
                  Line.find("!bake{") != std::string::npos   ||
                  Line.find("!serve{") != std::string::npos) &&
                 Line.find("{") != std::string::npos)
