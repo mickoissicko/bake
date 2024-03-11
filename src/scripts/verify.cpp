@@ -39,7 +39,10 @@ void VerifyFile()
         {
             InCook = true;
         }
-        else if (!(Line.empty()) && Line.find("!serve{") != str::npos)
+        else if (
+            !(Line.empty()) && Line.find("!serve{") != str::npos || 
+            Line.find("!serve{}")                   != str::npos
+        )
         {
             InServe = true;
         }
