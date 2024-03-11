@@ -20,26 +20,28 @@ void oven()
         return;
     }
 
-    std::string line;
+    const std::string CookKey      = ">cook";
+    const std::string BakeKey      = ">bake";
+    const std::string ServeKey     = ">serve";
+    const std::string OpeningBrace = "{";
     
     bool ShouldExecute = false;
     bool ShouldIgnore  = false;
+    
+    std::string line;
 
     while (std::getline(BakeFile, line))
     {
-        if (!line.empty())
+        if (
+                !(line.empty()) && 
+                !(line.find("!") == 0)
+        )
         {
-            if (line.find("//"))
-            {
-                ShouldIgnore = true;
-            }
-
             if (
-                (line.find(">cook") != str::npos   || 
-                 line.find(">bake") != str::npos   ||  // ._. rawr
-                 line.find(">serve") != str::npos) && 
-                 line.find("{") != str::npos
-            )
+                (line.find(CookKey)     != std::string::npos  || 
+                line.find(BakeKey)      != std::string::npos  || 
+                line.find(ServeKey)     != std::string::npos) && 
+                line.find(OpeningBrace) != std::string::npos)
             {
                 ShouldExecute = true;
             }
@@ -59,11 +61,6 @@ void oven()
                     std::string command = line.substr(start + 1, end - start - 1);
                     Cook(command);
                 }
-            }
-        
-            if (ShouldIgnore)
-            {
-                continue;
             }
         }
     }
