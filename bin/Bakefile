@@ -1,8 +1,9 @@
 
 >cook{
-    ! : cd ../src/ && g++ -o ../bin/test main.c scripts/bake.cpp scripts/oven.cpp : !
+    : cd ../src/ && g++ -o ../bin/test main.c scripts/bake.cpp scripts/oven.cpp :
 }
 
 >serve{
-    ! : echo "Files have been baked" : !
+   ! : echo "Files have been baked" :
+   ! This is a commented line, ergo, it wont be executed
 }
