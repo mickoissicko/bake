@@ -6,11 +6,11 @@
 #include <cstdlib>
 
 int main() {
-    defs::isf BakeFile("Cook.bake");
+    defs::isf BakeFile("Bakefile");
 
     if (!BakeFile.is_open())
     {
-        std::cerr << "Error opening Cook.bake" << std::endl;
+        std::cerr << "No files?" << std::endl;
         return 1;
     }
 
