@@ -25,7 +25,7 @@ Cooking is easy. Just make a file with the name (case sensitive) 'Bakefile.' The
 }
 
 >serve{
-    : echo "Command to execute on exot" :
+    : echo "Command to execute on exit" :
 }
 
 ```
