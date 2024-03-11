@@ -1,9 +1,14 @@
 #include <iostream>
 #include <fstream>
 
+namespace defs{
+    typedef std::ifstream isf;
+    typedef std::ofstream osf;
+}
+
 int main()
 {
-    std::ifstream BakeFile("Cook.bake");
+    defs::isf BakeFile("Cook.bake");
 
 
 
