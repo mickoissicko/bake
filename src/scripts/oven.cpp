@@ -10,7 +10,7 @@
 // so i dont have to use 'defs::str::npos' because what's the point then?
 using namespace defs;
 
-void oven()
+void Oven()
 {
     defs::isf BakeFile("Bakefile");
 
@@ -28,41 +28,40 @@ void oven()
     bool ShouldExecute = false;
     bool ShouldIgnore  = false;
     
-    std::string line;
+    std::string Line;
 
-    while (std::getline(BakeFile, line))
+    while (std::getline(BakeFile, Line))
     {
-        if (
-            !(line.empty()) && 
-            !(line.find("!") == 0)
-        )
+        if (!(Line.empty()) && !(Line.find("!--") == 0))
         {
             if (
-                (line.find(CookKey)     != std::string::npos  || 
-                line.find(BakeKey)      != std::string::npos  || 
-                line.find(ServeKey)     != std::string::npos) && 
-                line.find(OpeningBrace) != std::string::npos)
+                (Line.find(CookKey)     != std::string::npos  || 
+                Line.find(BakeKey)      != std::string::npos  || 
+                Line.find(ServeKey)     != std::string::npos) && 
+                Line.find(OpeningBrace) != std::string::npos)
             {
                 ShouldExecute = true;
             }
 
-            if (ShouldExecute && line.find("}") == 0)
+            if (ShouldExecute && Line.find("}") == 0)
             {
                 ShouldExecute = false;
             }
 
             if (ShouldExecute)
             {
-                size_t start = line.find(":");
-                size_t end = line.rfind(":");
+                size_t start = Line.find(":");
+                size_t end = Line.rfind(":");
 
                 if (start != str::npos && end != str::npos && start < end)
                 {
-                    std::string command = line.substr(start + 1, end - start - 1);
+                    std::string command = Line.substr(start + 1, end - start - 1);
                     Cook(command);
                 }
             }
         }
+
+        else{} // do nothing
     }
 
     BakeFile.close();
