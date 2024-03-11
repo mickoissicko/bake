@@ -20,12 +20,14 @@ Cooking is easy. Just make a file with the name (case sensitive) 'Bakefile.' The
 
 ```
 
->cook{
-    : echo "Some command" :
+!cook{
+    >some command;
+    >another command;
 }
 
->serve{
-    : echo "Command to execute on exit" :
+!serve{
+    >command to execute on close;
+    >another one;
 }
 
 ```
@@ -33,3 +35,9 @@ Cooking is easy. Just make a file with the name (case sensitive) 'Bakefile.' The
 The >cook{} function cooks the file, the >serve{} function serves the file (with whatever commands you defined for it.)
 
 Bake is also not platform-shell specific. Features like a global 'clrscr' (clear screen) for both POSIX and Windows is coming soon!
+
+## Syntax
+'!--' for comments
+
+..others adding soon
+
