@@ -1,8 +1,9 @@
 
 >cook{
-    : g++ src/main.cpp src/bake.cpp :
+    : cd src/ :
+    : g++ -o chef main.c scripts/bake.cpp scripts/oven.cpp:
 }
 
 >serve{
-    : echo "yeah bitch, no more make" :
+    : echo "Files have been baked" :
 }
