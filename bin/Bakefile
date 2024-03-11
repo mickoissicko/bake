@@ -1,15 +1,7 @@
-cc: 'gcc';
-
-name: '-o out';
-
-var: [
-    test/main.c
-    test/helo.c
-];
+test: [hello wrld]
 
 !main{
-    >[cc] [name] [var];
+    >echo "[test]";
 }
 
-!serve{
-}
+!serve{}
