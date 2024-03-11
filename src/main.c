@@ -2,7 +2,7 @@
 
 int main()
 {
-    oven();
+    Oven();
 
     return 0;
 }
