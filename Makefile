@@ -6,7 +6,8 @@ TARGET = $(BIN_DIR)/chef
 
 SRCS = src/main.c \
        src/scripts/bake.cpp \
-	   src/scripts/oven.cpp
+	   src/scripts/oven.cpp \
+	   src/scripts/verify.cpp
 
 $(TARGET): $(SRCS)
 	$(CXX) $^ -o $@
