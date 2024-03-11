@@ -7,6 +7,8 @@ void Cook(const std::string & command)
 
     if (result == 1)
     {
-        std::cerr << "Error!" << std::endl;
+        std::cerr << "Error!"          << std::endl
+                  << "Exception at: "  << std::endl
+                  << result            << std::endl;
     }
 }
