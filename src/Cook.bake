@@ -1,0 +1,9 @@
+CC  = "gcc"
+
+SRC = ../test/main.c  \
+      ../test/hello.c \
+      ../test/sayhi.c \
+
+main{
+    (CC) (SRC)
+}

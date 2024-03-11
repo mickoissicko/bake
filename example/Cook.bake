@@ -1,0 +1,16 @@
+// A comment
+
+output_file: 'binary.bin';
+cxx => 'g++';
+
+var => {
+    src/main.cpp  \
+    src/xyz.cpp   \
+    src/test.c    \
+};
+
+cmd => 'g++ -m32 -o bin/(output_file) (var)';
+
+_entry {
+    (cmd)
+}
