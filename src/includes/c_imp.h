@@ -4,4 +4,4 @@
     #define C_IMP_H
 #endif
 
-void oven();
+void Oven();
