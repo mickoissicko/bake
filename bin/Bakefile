@@ -1,9 +1,15 @@
 
 >cook{
-    : cd ../src/ && g++ -o ../bin/test main.c scripts/bake.cpp scripts/oven.cpp :
+    : echo hi :
 }
 
 >serve{
-   ! : echo "Files have been baked" :
-   ! This is a commented line, ergo, it wont be executed
+    !-- : echo sup :
+    
+    !-- commented code wont be executed
+    !-- but this will be executed
+    
+    : echo !-- sup :
+    
+    !-- because the comment's inside
 }
