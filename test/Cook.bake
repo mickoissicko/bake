@@ -1,0 +1,9 @@
+
+>bake{
+    : gcc -o output1 file1.c :
+    : gcc -o output2 file2.c :
+}
+
+>serve{
+    : out "files have been prepared :D" :
+}
