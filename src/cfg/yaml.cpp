@@ -70,7 +70,7 @@ void Yaml(int argc, char *argv[])
                 << endl;
 
         YamlCfg.close();
-    }
 
-    exit(0);
+        exit(0);
+    }
 }
