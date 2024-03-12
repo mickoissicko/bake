@@ -3,11 +3,11 @@
 CXX = g++
 
 SRCS = src/main.c                   \
-       src/modules/cfg/yaml.cpp     \
-       src/modules/oven.cpp         \
-       src/modules/run_checks.cpp   \
-       src/modules/scripts/cook.cpp \
-       src/mapping/map_vars.cpp
+       src/functions/modules/cfg/yaml.cpp     \
+       src/functions/modules/oven.cpp         \
+       src/functions/modules/run_checks.cpp   \
+       src/functions/modules/scripts/cook.cpp \
+       src/functions/mapping/map_vars.cpp
 
 TARGET = bin/chef
 
