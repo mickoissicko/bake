@@ -1,9 +1,8 @@
 #include "includes/modules.h"
 
-int main()
+int main(int argc, char* argv[])
 {
-    VerifyFile();
-    Oven();
+    RunChecks(argc, argv);
 
     return 0;
 }
