@@ -11,7 +11,9 @@
 #include <cstdlib>
 #include <map>
 
-namespace defs{
+namespace defs
+{
+    typedef std::string str;
     typedef std::ifstream isf;
     typedef std::ofstream osf;
 }
