@@ -21,7 +21,7 @@ namespace defs
 std::string ThrowVal(const std::string &value);
 
 void VerifyFile();
+void RunChecks();
 void Oven();
-
 void Yaml(int argc, char *argv[]);
 void Cook(const std::string &command);
