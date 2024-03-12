@@ -2,6 +2,8 @@
 
 std::map<std::string, std::string> Vars;
 
+using namespace defs;
+
 int main(int argc, char *argv[])
 {
     Yaml(argc, argv);    
@@ -35,11 +37,11 @@ void Oven()
         if (!(Line.empty()) && !(Line.find("!--") == 0))
         {
             if (
-                (Line.find("!cook{") != std::string::npos   ||
-                 Line.find("!main{") != std::string::npos   ||
-                 Line.find("!bake{") != std::string::npos   ||
-                 Line.find("!serve{") != std::string::npos) &&
-                Line.find("{") != std::string::npos)
+                (Line.find("!cook{") != str::npos   ||
+                 Line.find("!main{") != str::npos   || // sussy
+                 Line.find("!bake{") != str::npos   ||
+                 Line.find("!serve{") != str::npos) &&
+                Line.find("{") != str::npos)
             {
                 ShouldExecute = true;
             }
@@ -55,8 +57,8 @@ void Oven()
                 size_t end = Line.rfind(";");
 
                 if (
-                    start != std::string::npos &&
-                    end   != std::string::npos &&
+                    start != str::npos &&
+                    end   != str::npos &&
                     start < end
                 )
                 {
@@ -65,7 +67,7 @@ void Oven()
                     size_t VarStart = command.find("[");
                     size_t VarTerm = command.find("]");
 
-                    while (VarStart != std::string::npos && VarTerm != std::string::npos)
+                    while (VarStart != str::npos && VarTerm != str::npos)
                     {
                         std::string Var = command.substr(VarStart + 1, VarTerm - VarStart - 1);
                         std::string Val = ThrowVal(Var);
@@ -74,7 +76,6 @@ void Oven()
                         VarStart = command.find("[");
                         VarTerm = command.find("]");
                     }
-
                     Cook(command);
                 }
             }
@@ -87,6 +88,7 @@ void Oven()
 std::string ThrowVal(const std::string &value)
 {
     auto it = Vars.find(value);
+    
     if (it != Vars.end())
     {
         return it -> second;
@@ -126,28 +128,28 @@ void VerifyFile()
 
     while (std::getline(BakeFile, Line))
     {
-        if (!(Line.empty()) && Line.find("!main{") != std::string::npos)
+        if (!(Line.empty()) && Line.find("!main{") != str::npos)
         {
             InMain = true;
         }
-        else if (!(Line.empty()) && Line.find("!bake{") != std::string::npos)
+        else if (!(Line.empty()) && Line.find("!bake{") != str::npos)
         {
             InBake = true;
         }
-        else if (!(Line.empty()) && Line.find("!cook{") != std::string::npos)
+        else if (!(Line.empty()) && Line.find("!cook{") != str::npos)
         {
             InCook = true;
         }
         else if (
-            !(Line.empty()) && Line.find("!serve{") != std::string::npos ||
-            Line.find("!serve{}") != std::string::npos
+            !(Line.empty()) && Line.find("!serve{") != str::npos ||
+            Line.find("!serve{}") != str::npos
         )
         {
             InServe = true;
         }
 
         size_t BracePosition = Line.find_last_of('}');
-        if (BracePosition != std::string::npos)
+        if (BracePosition != str::npos)
         {
             if (InMain)
             {
@@ -175,7 +177,7 @@ void VerifyFile()
         size_t VarStart = Line.find("[");
         size_t VarTerm = Line.find("]");
 
-        if (AssignVar != std::string::npos && VarStart != std::string::npos && VarTerm != std::string::npos)
+        if (AssignVar != str::npos && VarStart != str::npos && VarTerm != str::npos)
         {
             std::string Var = Line.substr(0, AssignVar);
             std::string Val = Line.substr(VarStart + 1, VarTerm - VarStart - 1);
