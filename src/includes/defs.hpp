@@ -8,9 +8,11 @@
 #include <string>
 
 void Cook(const std::string & command);
+void Yaml(int argc, char *argv[]);
+
 std::string ThrowVal(const std::string & value);
 
-namespace defs
-{
+namespace defs{
     typedef std::ifstream isf;
+    typedef std::ofstream osf;
 }
