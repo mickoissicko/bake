@@ -2,7 +2,7 @@
 
 CXX = g++
 
-SRCS = main.c  					  \
+SRCS = main.c                     \
        ./modules/cfg/yaml.cpp     \
        ./modules/oven.cpp         \
        ./modules/run_checks.cpp   \
