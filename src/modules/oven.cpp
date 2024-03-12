@@ -21,9 +21,9 @@ void Oven()
         if (!(Line.empty()) && !(Line.find("!--") == 0))
         {
             if (
-                (Line.find("!cook{") != std::string::npos ||
-                 Line.find("!main{") != std::string::npos ||
-                 Line.find("!bake{") != std::string::npos ||
+                (Line.find("!cook{") != std::string::npos   ||
+                 Line.find("!main{") != std::string::npos   ||
+                 Line.find("!bake{") != std::string::npos   ||
                  Line.find("!serve{") != std::string::npos) &&
                 Line.find("{") != std::string::npos)
             {
@@ -40,21 +40,25 @@ void Oven()
                 size_t start = Line.find(">");
                 size_t end = Line.rfind(";");
 
-                if (start != std::string::npos && end != std::string::npos && start < end)
+                if (
+                    start != std::string::npos &&
+                    end   != std::string::npos &&
+                    start < end
+                )
                 {
                     std::string command = Line.substr(start + 1, end - start - 1);
 
                     size_t VarStart = command.find("[");
-                    size_t VarTerminate = command.find("]");
+                    size_t VarTerm = command.find("]");
 
-                    while (VarStart != std::string::npos && VarTerminate != std::string::npos)
+                    while (VarStart != std::string::npos && VarTerm != std::string::npos)
                     {
-                        std::string varName = command.substr(VarStart + 1, VarTerminate - VarStart - 1);
-                        std::string varValue = ThrowVal(varName);
-                        command.replace(VarStart, VarTerminate - VarStart + 1, varValue);
+                        std::string Var = command.substr(VarStart + 1, VarTerm - VarStart - 1);
+                        std::string Val = ThrowVal(Var);
+                        command.replace(VarStart, VarTerm - VarStart + 1, Val);
 
                         VarStart = command.find("[");
-                        VarTerminate = command.find("]");
+                        VarTerm = command.find("]");
                     }
 
                     Cook(command);
