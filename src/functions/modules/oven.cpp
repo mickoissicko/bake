@@ -1,6 +1,4 @@
-#include "../common/common.hpp"
-#include "../includes/import.hpp"
-#include "../includes/defs.hpp"
+#include "../../import/import.hpp"
 
 using namespace defs;
 
