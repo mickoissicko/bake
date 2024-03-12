@@ -1,9 +1,0 @@
-
-!cook{
-    >cd src/;
-    >g++ -o chef2 main.c scripts/bake.cpp scripts/oven.cpp;
-}
-
-!serve{
-    >echo "Files have been baked";
-}
