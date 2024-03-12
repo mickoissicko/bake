@@ -7,6 +7,8 @@
 
 void RunChecks(int argc, char* argv[])
 {
+    Yaml(argc, argv);
+
     defs::isf BakeFile("Bakefile");
     
     if (!(BakeFile.is_open()))
@@ -19,6 +21,4 @@ void RunChecks(int argc, char* argv[])
 
     VerifyFile();
     Oven();
-
-    Yaml(argc, argv);
 }
