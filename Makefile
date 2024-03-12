@@ -1,19 +1,12 @@
 # Ironic...
 
-CXX = g++
-BIN_DIR = bin
-TARGET = $(BIN_DIR)/chef
+SRC = one_file/main.cpp
+cxx = g++
 
-SRCS = src/main.c		        \
-	   src/funcs/bake.cpp       \
-	   src/funcs/throw_val.cpp  \
-	   src/modules/oven.cpp     \
-	   src/modules/verify.cpp 
-
-$(TARGET): $(SRCS)
-	$(CXX) $^ -o $@
-
-clean:
-	rm -f $(TARGET)
+chef: $(SRC)
+	$(cxx) -o chef $(SRC)
 
 .PHONY: clean
+
+clean:
+	rm -f chef
