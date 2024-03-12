@@ -6,17 +6,20 @@
 
 #include <iostream>
 #include <fstream>
+#include <cstring>
 #include <string>
 #include <cstdlib>
 #include <map>
 
 namespace defs{
     typedef std::ifstream isf;
+    typedef std::ofstream osf;
 }
 
-std::string ThrowVal(const std::string & value);
+std::string ThrowVal(const std::string &value);
 
 void VerifyFile();
 void Oven();
 
-void Cook(const std::string & command);
+void Yaml(int argc, char *argv[]);
+void Cook(const std::string &command);
