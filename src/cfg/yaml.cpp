@@ -71,4 +71,6 @@ void Yaml(int argc, char *argv[])
 
         YamlCfg.close();
     }
+
+    exit(0);
 }
