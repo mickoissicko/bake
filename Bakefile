@@ -1,0 +1,18 @@
+! Bakefile!!
+
+r: [functions/];
+src: [main.c [r]/oven.cpp [r]/run_checks.cpp [r]/scripts/cook.cpp [r]/mapping/map_vars.cpp];
+run: [cd src/ && g++];
+
+TARGET = bin/chef
+
+CXXFLAGS = -Wall -std=c++11
+
+!main{
+    >echo [test];
+    >[run] -o [out] [src];
+}
+
+!serve{
+    >echo 'Success!';
+}
