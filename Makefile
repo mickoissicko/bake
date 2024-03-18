@@ -3,7 +3,6 @@
 CXX = g++
 
 SRCS = src/main.c                             \
-       src/functions/cfg/yaml.cpp             \
        src/functions/modules/oven.cpp         \
        src/functions/modules/run_checks.cpp   \
        src/functions/scripts/cook.cpp         \
