@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
             fprintf(Bakefile, "! ...\n");
             fprintf(Bakefile, "\n");
             fprintf(Bakefile, "!main{\n");
-            fprintf(Bakefile, "    >echo 'Hello world';");
+            fprintf(Bakefile, "    >echo 'Hello world';\n");
             fprintf(Bakefile, "}\n");
             fprintf(Bakefile, "\n");
             fprintf(Bakefile, "!serve{\n");
