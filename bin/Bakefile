@@ -1,4 +1,4 @@
-test: [hello wrld]
+test: [hello wrld];
 
 !main{
     >echo "[test]";
