@@ -1,18 +1,13 @@
 ! Bakefile!!
 
-r: [functions/];
-src: [main.c [r]/oven.cpp [r]/run_checks.cpp [r]/scripts/cook.cpp [r]/mapping/map_vars.cpp];
-run: [cd src/ && g++];
-
-TARGET = bin/chef
-
-CXXFLAGS = -Wall -std=c++11
+src: [../main.c modules/oven.cpp modules/run_checks.cpp scripts/cook.cpp mapping/map_vars.cpp];
+run: [cd src/functions/ && g++];
+out: [../../bin/chef];
 
 !main{
-    >echo [test];
     >[run] -o [out] [src];
 }
 
 !serve{
-    >echo 'Success!';
+    >echo 'Done!';
 }
