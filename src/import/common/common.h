@@ -7,4 +7,3 @@
 void VerifyFile();
 void RunChecks();
 void Oven();
-void Yaml(int argc, char *argv[]);
