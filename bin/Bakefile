@@ -1,7 +1,0 @@
-test: [hello wrld];
-
-!main{
-    >echo "[test]";
-}
-
-!serve{}
