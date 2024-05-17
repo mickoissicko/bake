@@ -2,15 +2,15 @@
 
 CXX = g++
 
-SRCS = src/main.c                             \
-       src/functions/modules/oven.cpp         \
-       src/functions/modules/run_checks.cpp   \
-       src/functions/scripts/cook.cpp         \
-       src/functions/mapping/map_vars.cpp
+SRCS = src/main.cpp         \
+       src/oven.cpp         \
+       src/run_checks.cpp   \
+       src/cook.cpp         \
+       src/map_vars.cpp
 
 TARGET = bin/chef
 
-CXXFLAGS = -Wall -std=c++11
+CXXFLAGS = -Wall -std=c++17
 
 all: $(TARGET)
 
